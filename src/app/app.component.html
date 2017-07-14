@@ -1,8 +1,30 @@
 <header>
     <h1> Angular: Post-Basics </h1>
+
+    <nav>
+      <!-- these are BAD because they will refresh the page -->
+      <a href="/"> BAD Quotes List Link </a>
+      <br>
+
+      <a href="/forms"> BAD Forms List Link </a>
+      <br>
+
+      <!-- these are GOOD because they spa -->
+      <a [routerLink]="['']"> GOOD Quotes List Link </a>
+      <br>
+      <!-- so the brackets are only necessary when your url is dynamic(a variable) -->
+
+      <a [routerLink]="['forms']"> GOOD Forms List Link </a>
+      <br>
+
+      <a [routerLink]="['contacts']"> Contacts </a>
+      <br>
+    </nav>
 </header>
 
-<app-form></app-form>
+<!-- kind of like the "<%- body -%>" in EJS layouts -->
+<router-outlet></router-outlet>
+<!-- must be called "<router-outlet>" -->
 
 <footer>
   <p> Made with 🥔  at Ironhack </p>

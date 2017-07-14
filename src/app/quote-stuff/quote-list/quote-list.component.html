@@ -1,0 +1,10 @@
+<h2> Quote List </h2>
+  <ul>
+    <li *ngFor="let quote of allTheQuotes">
+      <app-quote-item
+      (onQuoteDelete)="executeDeletion($event)"
+      [quoteInfo]="quote"></app-quote-item>
+    </li>
+    <!-- "onQuoteDelete is the name of the child's output" -->
+    <!-- $ event has to be exactly and literally $event -->
+  </ul>
